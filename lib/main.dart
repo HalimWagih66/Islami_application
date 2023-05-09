@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_application/splash%20screen/splash%20screen.dart';
 
+import 'details screen/hadeth/details hadeth.dart';
 import 'layout screen/layout screen.dart';
 
 void main() {
@@ -12,6 +13,7 @@ class MyApplication extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
+        DetailsHadeth.routeName:(context)=>DetailsHadeth(),
         SplashScreen.routeName :(context)=>SplashScreen(),
         LayoutScreen.routeName:(context)=>LayoutScreen(),
       },
@@ -20,6 +22,9 @@ class MyApplication extends StatelessWidget{
           primaryColor: Color(0xffB7935F),
           scaffoldBackgroundColor: Colors.transparent,
           appBarTheme: AppBarTheme(
+            iconTheme: IconThemeData(
+              color: Color(0xff242424),
+            ),
             color: Colors.transparent,
             titleTextStyle: TextStyle(
               color: Color(0xff242424),
