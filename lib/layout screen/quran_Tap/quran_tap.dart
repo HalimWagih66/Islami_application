@@ -156,13 +156,10 @@ class QuranTap extends StatelessWidget {
             flex: 3,
             child: ListView.separated(
               itemBuilder: (context, index) =>
-                  SouraName(sour_name: sura_name[index]),
+                  SouraName(sour_name: sura_name[index],index: index),
               separatorBuilder: (context, index) => Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(3),
-                  color: Theme.of(context).primaryColor,
-                ),
                 width: double.infinity,
+                color: Theme.of(context).primaryColor,
                 height: 1,
               ),
               itemCount: sura_name.length,
