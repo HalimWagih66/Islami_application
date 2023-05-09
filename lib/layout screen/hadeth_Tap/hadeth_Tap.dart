@@ -7,7 +7,7 @@ class HadethTap extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: Colors.red,
+      color: Colors.yellow,
     );
   }
 }
