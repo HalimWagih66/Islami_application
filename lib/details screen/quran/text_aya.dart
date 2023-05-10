@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../details screen/quran/details quran.dart';
-import '../../models/models.quran/details sura arguments.dart';
-
 class Text_Aya extends StatelessWidget {
   String aya;
   Text_Aya({required this.aya});
@@ -15,5 +12,4 @@ class Text_Aya extends StatelessWidget {
       textAlign: TextAlign.center,
     );
   }
-
 }

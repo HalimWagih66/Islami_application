@@ -58,7 +58,6 @@ class _DetailsSuraState extends State<DetailsSura> {
       ),
     );
   }
-
   void readFile(int chapterIndex)async{
     String chapter_content = await rootBundle.loadString("assets/images/files/quran/${chapterIndex+1}.txt");
     ayat = chapter_content.split('\n');
