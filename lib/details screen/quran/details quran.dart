@@ -40,20 +40,26 @@ class _DetailsSuraState extends State<DetailsSura> {
           ),
           title: Text(arg.sura_name),
         ),
-        body: Container(
-          padding: EdgeInsets.all(20),
+        body: Card(
           margin: EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            color: Colors.white,
-          ),
-          child: ayat.isEmpty?Center(child: CircularProgressIndicator()):ListView.separated(
-              itemBuilder: (context, index) => Text_Aya(aya: ayat[index]),
-              separatorBuilder: (context, index) => Container(
-            width: double.infinity,
-            color: Theme.of(context).primaryColor,
-            height: 1,
-          ), itemCount: ayat.length
+          child: Container(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              children: [
+                Text_Aya(aya: "أَعُوذُ بِاللَّهِ مِنَ الشَّيطَانِ الرَّجِيمِ",),
+                Text_Aya(aya: "بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِِ",),
+                ayat.isEmpty?Center(child: CircularProgressIndicator()):Expanded(
+                  child: ListView.separated(
+                      itemBuilder: (context, index) => Text_Aya(aya: ayat[index]),
+                      separatorBuilder: (context, index) => Container(
+                    width: double.infinity,
+                    color: Theme.of(context).accentColor,
+                    height: 1,
+                  ), itemCount: ayat.length
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
