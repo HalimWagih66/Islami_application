@@ -121,15 +121,7 @@ class QuranTap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(
-              "assets/images/layout screen/background_home_screen.png"),
-          fit: BoxFit.fill,
-        ),
-      ),
-      child: Column(
+    return  Column(
         children: [
           Expanded(
             flex: 1,
@@ -141,16 +133,16 @@ class QuranTap extends StatelessWidget {
           Container(
             height: 1,
             width: double.infinity,
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).accentColor,
           ),
           Container(
             margin: const EdgeInsets.symmetric(vertical: 10.0),
-            child: Text("Sura Name",style: TextStyle(color: Color(0xff242424),fontSize: 25)),
+            child: Text("Sura Name",style: Theme.of(context).textTheme.headline5),
           ),
           Container(
             height: 1,
             width: double.infinity,
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).accentColor,
           ),
           Expanded(
             flex: 3,
@@ -159,14 +151,13 @@ class QuranTap extends StatelessWidget {
                   SouraName(sour_name: sura_name[index],index: index),
               separatorBuilder: (context, index) => Container(
                 width: double.infinity,
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).accentColor,
                 height: 1,
               ),
               itemCount: sura_name.length,
             ),
           )
         ],
-      ),
-    );
+      );
   }
 }

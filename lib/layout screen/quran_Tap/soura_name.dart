@@ -20,10 +20,9 @@ class SouraName extends StatelessWidget {
       },
       child: Text(
         sour_name,
-        style: TextStyle(color: Color(0xff242424), fontSize: 25),
+        style: Theme.of(context).textTheme.bodyText2,
         textAlign: TextAlign.center,
       ),
     );
   }
-
 }

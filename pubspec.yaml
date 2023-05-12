@@ -63,6 +63,8 @@ flutter:
     - assets/images/
     - assets/images/layout screen/
     - assets/images/files/
+    - assets/images/layout screen/background_main/
+    - assets/images/splash screen/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

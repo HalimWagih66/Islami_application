@@ -28,16 +28,16 @@ class _HadethTapState extends State<HadethTap> {
         Container(
           height: 1,
           width: double.infinity,
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).accentColor,
         ),
         Container(
           margin: const EdgeInsets.symmetric(vertical: 10.0),
-          child: Text("Sura Name",style: TextStyle(color: Color(0xff242424),fontSize: 25)),
+          child: Text("Sura Name",style: Theme.of(context).textTheme.headline5),
         ),
         Container(
           height: 1,
           width: double.infinity,
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).accentColor,
         ),
         Expanded(
           flex: 3,
@@ -47,7 +47,7 @@ class _HadethTapState extends State<HadethTap> {
                 separatorBuilder: (context,index)=>Container(
                   height: 1,
                   width: double.infinity,
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).accentColor,
                 ),
                 itemCount: list_hadeth.length,
             ),

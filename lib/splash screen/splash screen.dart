@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../layout screen/layout screen.dart';
+import '../style/My_theme_data.dart';
 
 class SplashScreen extends StatelessWidget{
   static const routeName = "SplashScreen";
@@ -13,7 +14,8 @@ class SplashScreen extends StatelessWidget{
       width: double.infinity,
       decoration: BoxDecoration(
          image: DecorationImage(
-           image: AssetImage("assets/images/splash screen/background_splash_screen.png"),
+           image: AssetImage(
+               MyThemeData.themeMode == ThemeMode.dark?"assets/images/splash screen/dark/background_splash_screen_dark.png":"assets/images/splash screen/light/background_splash_screen_light.png"),
            fit: BoxFit.fill
          ),
       ),
