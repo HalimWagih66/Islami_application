@@ -8,10 +8,7 @@ class Text_Style_Hadeth extends StatelessWidget {
     return Text(
         content,
         textAlign: TextAlign.right,
-        style: TextStyle(
-            color: Color(0xff242424),
-            fontSize: 20
-        ),
+        style: Theme.of(context).textTheme.bodyText2,
     );
   }
 }

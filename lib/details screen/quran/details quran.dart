@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:islami_application/details%20screen/quran/text_aya.dart';
 
 import '../../models/models.quran/details sura arguments.dart';
+import '../../style/My_theme_data.dart';
 
 class DetailsSura extends StatefulWidget {
   static const routeName = "DetailsSura";
@@ -23,7 +24,7 @@ class _DetailsSuraState extends State<DetailsSura> {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-              "assets/images/layout screen/background_home_screen.png"),
+              MyThemeData.themeMode == ThemeMode.dark?"assets/images/layout screen/background_main/dark/background_layout_screen_dark.png":"assets/images/layout screen/background_main/light/background_layout_screen_light.png"),
           fit: BoxFit.fill,
         ),
       ),

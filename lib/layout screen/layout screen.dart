@@ -3,6 +3,7 @@ import 'package:islami_application/layout%20screen/quran_Tap/quran_tap.dart';
 import 'package:islami_application/layout%20screen/radio_Tap/radio_tap.dart';
 import 'package:islami_application/layout%20screen/tasbeh_Tap/tasbeh_Tap.dart';
 
+import '../style/My_theme_data.dart';
 import 'hadeth_Tap/hadeth_Tap.dart';
 
 class LayoutScreen extends StatefulWidget{
@@ -31,7 +32,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/images/layout screen/background_home_screen.png"),
+          image: AssetImage(MyThemeData.themeMode == ThemeMode.dark?"assets/images/layout screen/background_main/dark/background_layout_screen_dark.png":"assets/images/layout screen/background_main/light/background_layout_screen_light.png"),
           fit: BoxFit.fill,
         ),
       ),

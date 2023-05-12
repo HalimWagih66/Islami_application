@@ -28,8 +28,6 @@ class _TasbehTapState extends State<TasbehTap> {
                   Icons.arrow_back_ios,
                   color: Color(0xffE3D6C4),
               ),
-              focusColor: Colors.cyan,
-              hoverColor: Colors.red,
               title: Text(content_tasbeh[index],textAlign: TextAlign.right),
               subtitle: Text(reward_tasbeh[index],textAlign: TextAlign.right),
             ),
