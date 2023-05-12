@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_application/layout%20screen/quran_Tap/quran_tap.dart';
 import 'package:islami_application/layout%20screen/radio_Tap/radio_tap.dart';
 import 'package:islami_application/layout%20screen/tasbeh_Tap/tasbeh_Tap.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../style/My_theme_data.dart';
 import 'hadeth_Tap/hadeth_Tap.dart';
 
@@ -21,14 +21,15 @@ class _LayoutScreenState extends State<LayoutScreen> {
     TasbehTap(),
     RadioTap(),
   ];
-  List<String> title = [
-    "Quran",
-    "Hadeth",
-    "Tasbeh",
-    "Radio"
-  ];
+
   @override
   Widget build(BuildContext context) {
+    List<String> title = [
+      AppLocalizations.of(context)!.quran,
+      AppLocalizations.of(context)!.hadeth,
+      AppLocalizations.of(context)!.tasbeh,
+      AppLocalizations.of(context)!.radio,
+    ];
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(

@@ -28,8 +28,8 @@ class _TasbehTapState extends State<TasbehTap> {
                   Icons.arrow_back_ios,
                   color: Color(0xffE3D6C4),
               ),
-              title: Text(content_tasbeh[index],textAlign: TextAlign.right),
-              subtitle: Text(reward_tasbeh[index],textAlign: TextAlign.right),
+              title: Text(content_tasbeh[index],style: Theme.of(context).textTheme.bodyText1,textDirection: TextDirection.rtl),
+              subtitle: Text(reward_tasbeh[index],style: Theme.of(context).textTheme.bodyText2,textDirection: TextDirection.rtl),
             ),
           ),
         itemCount: content_tasbeh.length,
@@ -43,8 +43,6 @@ class _TasbehTapState extends State<TasbehTap> {
     for(int i = 0 ,z = 0; i < lines.length;i+=2,z++) {
       content_tasbeh.add(lines[i]);
       reward_tasbeh.add(lines[i + 1]);
-      print(content_tasbeh[z]);
-      print(reward_tasbeh[z]);
     }
     setState(() {
 
