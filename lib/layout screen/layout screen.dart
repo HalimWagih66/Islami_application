@@ -29,11 +29,11 @@ class _LayoutScreenState extends State<LayoutScreen> {
   Widget build(BuildContext context) {
     var provider = Provider.of<SettingsProvider>(context);
     List<String> title = [
-      AppLocalizations.of(context)!.settings,
       AppLocalizations.of(context)!.quran,
       AppLocalizations.of(context)!.hadeth,
       AppLocalizations.of(context)!.tasbeh,
       AppLocalizations.of(context)!.radio,
+      AppLocalizations.of(context)!.settings
     ];
     return Container(
       decoration: BoxDecoration(

@@ -47,8 +47,6 @@ class _DetailsSuraState extends State<DetailsSura> {
             padding: EdgeInsets.all(20),
             child: Column(
               children: [
-                Text_Aya(aya: "أَعُوذُ بِاللَّهِ مِنَ الشَّيطَانِ الرَّجِيمِ",),
-                Text_Aya(aya: "بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِِ",),
                 ayat.isEmpty?Center(child: CircularProgressIndicator()):Expanded(
                   child: ListView.separated(
                       itemBuilder: (context, index) => Text_Aya(aya: ayat[index]),
