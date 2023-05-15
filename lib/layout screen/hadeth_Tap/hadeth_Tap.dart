@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_application/models/models.hadeth/hadeth.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'hadeth_name.dart';
 
 class HadethTap extends StatefulWidget {
@@ -32,7 +32,7 @@ class _HadethTapState extends State<HadethTap> {
         ),
         Container(
           margin: const EdgeInsets.symmetric(vertical: 10.0),
-          child: Text("Sura Name",style: Theme.of(context).textTheme.headline5),
+          child: Text(AppLocalizations.of(context)!.chapter_hadeth,style: Theme.of(context).textTheme.headline5),
         ),
         Container(
           height: 1,
@@ -57,7 +57,7 @@ class _HadethTapState extends State<HadethTap> {
   }
 
   void reaFile()async{
-    String chapterContent = await rootBundle.loadString("assets/images/files/hadeth/ahadeth.txt");
+    String chapterContent = await rootBundle.loadString("assets/files/hadeth/ahadeth.txt");
     List<String>separated_hadith = chapterContent.split("#");
     for(int i = 0 ;i < separated_hadith.length;i++){
       List<String>lines = separated_hadith[i].trim().split('\n');

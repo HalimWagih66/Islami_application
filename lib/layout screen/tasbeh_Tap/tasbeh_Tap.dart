@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../details screen/tasbeh/tasbeh details.dart';
+
 class TasbehTap extends StatefulWidget {
   @override
   State<TasbehTap> createState() => _TasbehTapState();
@@ -12,40 +14,56 @@ class _TasbehTapState extends State<TasbehTap> {
 
   @override
   Widget build(BuildContext context) {
-    if(content_tasbeh.isEmpty){
+    if (content_tasbeh.isEmpty) {
       readFile();
     }
     return Container(
-      child: content_tasbeh.isEmpty ? Center(child: CircularProgressIndicator()):ListView.builder(
-          itemBuilder: (context,index)=> Card(
-            //shape: Border.all(width: 3,color: Color(0xffE3D6C4)),
-            shape: OutlineInputBorder(
-              borderSide: BorderSide(color: Color(0xffE3D6C4),style: BorderStyle.solid,width: 2),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: ListTile(
-              leading: Icon(
-                  Icons.arrow_back_ios,
-                  color: Color(0xffE3D6C4),
+      child: content_tasbeh.isEmpty
+          ? Center(child: CircularProgressIndicator())
+          : ListView.builder(
+              itemBuilder: (context, index) => InkWell(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    TasbehDetails.routeName,
+                    arguments: content_tasbeh[index],
+                  );
+                },
+                child: Card(
+                  shape: OutlineInputBorder(
+                    borderSide: BorderSide(
+                        color: Theme.of(context).accentColor,
+                        style: BorderStyle.solid,
+                        width: 1),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.arrow_back_ios,
+                      color: Color(0xffE3D6C4),
+                    ),
+                    title: Text(textDirection:TextDirection.rtl,content_tasbeh[index],
+                        style: Theme.of(context).textTheme.bodyText1,
+                        ),
+                    subtitle: Text(textDirection:TextDirection.rtl,reward_tasbeh[index],
+                        style: Theme.of(context).textTheme.bodyText2,
+                        ),
+                  ),
+                ),
               ),
-              title: Text(content_tasbeh[index],style: Theme.of(context).textTheme.bodyText1,textDirection: TextDirection.rtl),
-              subtitle: Text(reward_tasbeh[index],style: Theme.of(context).textTheme.bodyText2,textDirection: TextDirection.rtl),
+              itemCount: content_tasbeh.length,
             ),
-          ),
-        itemCount: content_tasbeh.length,
-      ),
     );
   }
 
-  void readFile()async{
-    String chpaterHadeth = await rootBundle.loadString("assets/images/files/tasbeh/tasbeh.txt");
-    List<String>lines = chpaterHadeth.split('\n');
-    for(int i = 0 ,z = 0; i < lines.length;i+=2,z++) {
+  void readFile() async {
+    String chpaterHadeth =
+        await rootBundle.loadString("assets/files/tasbeh/tasbeh.txt");
+    List<String> lines = chpaterHadeth.split('\n');
+    for (int i = 0, z = 0; i < lines.length; i += 2, z++) {
       content_tasbeh.add(lines[i]);
       reward_tasbeh.add(lines[i + 1]);
     }
-    setState(() {
-
-    });
+    setState(() {});
   }
 }

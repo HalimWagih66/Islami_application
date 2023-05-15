@@ -4,5 +4,11 @@
   "quran": "قران",
   "hadeth": "حديث",
   "tasbeh": "تسبيح",
-  "radio": "الاذاعه"
+  "radio": "الاذاعه",
+  "chapter_hadeth": "الاحاديث",
+  "settings": "الاعدادات",
+  "theme": "السمه",
+  "dark": "داكن",
+  "light": "فاتح",
+  "language": "اللغه"
 }

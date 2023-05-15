@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class MyThemeData {
   static const Color lightPrimaryColor = Color(0xffB7935F);
   static const Color darkPrimaryColor = Color(0xff141A2E);
@@ -7,9 +8,8 @@ class MyThemeData {
   static const Color darkAccentColor = Color(0xFFFACC1D);
   static const Color lightAccentColor = Color(0xFFFACC1D);
   static var lightTheme = ThemeData(
-      progressIndicatorTheme: ProgressIndicatorThemeData(
-        color: lightPrimaryColor,
-      ),
+      progressIndicatorTheme:
+          ProgressIndicatorThemeData(color: lightPrimaryColor),
       primaryColor: lightPrimaryColor,
       cardColor: Colors.white,
       accentColor: lightPrimaryColor,
@@ -41,7 +41,14 @@ class MyThemeData {
             fontSize: 24),
         bodyText1: TextStyle(color: lightMainTextColor, fontSize: 24),
         bodyText2: TextStyle(color: lightMainTextColor, fontSize: 20),
-      ));
+      ),
+      bottomSheetTheme: BottomSheetThemeData(
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(12), topLeft: Radius.circular(12))),
+      )
+  );
 
   static var darkTheme = ThemeData(
       progressIndicatorTheme: ProgressIndicatorThemeData(
@@ -78,7 +85,12 @@ class MyThemeData {
             fontSize: 24),
         bodyText1: TextStyle(color: darkMainTextColor, fontSize: 24),
         bodyText2: TextStyle(color: darkMainTextColor, fontSize: 20),
-      )
-  );
+      ),
+      bottomSheetTheme: BottomSheetThemeData(
+        backgroundColor: darkPrimaryColor,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(12), topLeft: Radius.circular(12))),
+      ));
   static ThemeMode themeMode = ThemeMode.dark;
 }

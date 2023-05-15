@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_application/details%20screen/quran/text_aya.dart';
+import 'package:provider/provider.dart';
 
+import '../../layout screen/provider/settings_provider.dart';
 import '../../models/models.quran/details sura arguments.dart';
-import '../../style/My_theme_data.dart';
 
 class DetailsSura extends StatefulWidget {
   static const routeName = "DetailsSura";
@@ -16,6 +17,7 @@ class _DetailsSuraState extends State<DetailsSura> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     var arg = ModalRoute.of(context)?.settings.arguments as DetailsSuraArg;
     if(ayat.isEmpty){
       readFile(arg.index);
@@ -23,8 +25,7 @@ class _DetailsSuraState extends State<DetailsSura> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(
-              MyThemeData.themeMode == ThemeMode.dark?"assets/images/layout screen/background_main/dark/background_layout_screen_dark.png":"assets/images/layout screen/background_main/light/background_layout_screen_light.png"),
+          image: AssetImage(provider.getMainBackground()),
           fit: BoxFit.fill,
         ),
       ),
@@ -66,7 +67,7 @@ class _DetailsSuraState extends State<DetailsSura> {
     );
   }
   void readFile(int chapterIndex)async{
-    String chapter_content = await rootBundle.loadString("assets/images/files/quran/${chapterIndex+1}.txt");
+    String chapter_content = await rootBundle.loadString("assets/files/quran/${chapterIndex+1}.txt");
     ayat = chapter_content.split('\n');
     setState(() {});
   }
