@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import '../../details screen/quran/details quran.dart';
 import '../../models/models.quran/details sura arguments.dart';

@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:islami_application/details%20screen/hadeth/text_style_hadeth.dart';
+import 'package:provider/provider.dart';
 
+import '../../layout screen/provider/settings_provider.dart';
 import '../../models/models.hadeth/hadeth.dart';
-import '../../style/My_theme_data.dart';
 
 class DetailsHadeth extends StatelessWidget {
   static const routeName = "DetailsHadeth";
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     var arg = ModalRoute.of(context)?.settings.arguments as Hadeth;
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(
-              MyThemeData.themeMode == ThemeMode.dark?"assets/images/layout screen/background_main/dark/background_layout_screen_dark.png":"assets/images/layout screen/background_main/light/background_layout_screen_light.png"),
+          image: AssetImage(provider.getMainBackground()),
           fit: BoxFit.fill,
         ),
       ),
