@@ -43,6 +43,10 @@ class _DetailsSuraState extends State<DetailsSura> {
         ),
         body: Card(
           margin: EdgeInsets.all(20),
+          elevation: 15,
+          shape: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(15),
+              borderSide: BorderSide(style: BorderStyle.solid,width: 1,color: Colors.transparent),),
           child: Container(
             padding: EdgeInsets.all(20),
             child: Column(

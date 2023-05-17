@@ -6,30 +6,29 @@ import 'package:shared_preferences/shared_preferences.dart';
 class SettingsProvider extends ChangeNotifier {
   ThemeMode themeMode = ThemeMode.light;
   String languageCode = "en";
-  late SharedPreferences prefColor;
-  late SharedPreferences prefLanguage;
+  late SharedPreferences Settings_Data;
   SettingsProvider(){
     getColorFromSharedPreferences();
     getLanguageFromSharedPreferences();
   }
 
   getColorFromSharedPreferences()async{
-    prefColor = await SharedPreferences.getInstance();
-    themeMode = prefColor.getBool('themeIsDark') == true ? ThemeMode.dark:ThemeMode.light;
+    Settings_Data = await SharedPreferences.getInstance();
+    themeMode = Settings_Data.getBool('themeIsDark') == true ? ThemeMode.dark:ThemeMode.light;
     notifyListeners();
   }
   getLanguageFromSharedPreferences()async{
-    prefLanguage = await SharedPreferences.getInstance();
-    languageCode = prefLanguage.getString('language') == "ar"?"ar":"en";
+    Settings_Data = await SharedPreferences.getInstance();
+    languageCode = Settings_Data.getString('language') == "ar"?"ar":"en";
     notifyListeners();
   }
   savedColor(ThemeMode them)async{
-    prefColor = await SharedPreferences.getInstance();
-    prefColor.setBool("themeIsDark", them == ThemeMode.dark?true:false);
+    Settings_Data = await SharedPreferences.getInstance();
+    Settings_Data.setBool("themeIsDark", them == ThemeMode.dark?true:false);
   }
   savedLanguage(String language)async{
-    prefLanguage = await SharedPreferences.getInstance();
-    prefLanguage.setString("language",language);
+    Settings_Data = await SharedPreferences.getInstance();
+    Settings_Data.setString("language",language);
   }
   void changeLanguage(String newLangCode){
     languageCode = newLangCode;

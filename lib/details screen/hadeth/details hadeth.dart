@@ -7,6 +7,7 @@ import '../../models/models.hadeth/hadeth.dart';
 
 class DetailsHadeth extends StatelessWidget {
   static const routeName = "DetailsHadeth";
+
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<SettingsProvider>(context);
@@ -21,24 +22,27 @@ class DetailsHadeth extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            onPressed: (){
+            onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(
-              Icons.arrow_back_ios
-            ),
+            icon: Icon(Icons.arrow_back_ios),
           ),
           title: Text(arg.title),
         ),
         body: Card(
-            margin: EdgeInsets.all(20),
-            shape: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: Container(
-              padding: EdgeInsets.all(13),
-                child: ListView.builder(itemBuilder: (context, index) => Text_Style_Hadeth(content: arg.content_hadeth[index]),itemCount: arg.content_hadeth.length)),
+          margin: EdgeInsets.all(20),
+          elevation: 15,
+          shape: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(style: BorderStyle.solid,width: 1,color: Colors.transparent)
           ),
+          child: Container(
+              padding: EdgeInsets.all(13),
+              child: ListView.builder(
+                  itemBuilder: (context, index) =>
+                      Text_Style_Hadeth(content: arg.content_hadeth[index]),
+                  itemCount: arg.content_hadeth.length)),
+        ),
       ),
     );
   }
