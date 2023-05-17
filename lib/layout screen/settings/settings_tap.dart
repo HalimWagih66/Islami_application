@@ -3,7 +3,6 @@ import 'package:islami_application/layout%20screen/provider/settings_provider.da
 import 'package:islami_application/layout%20screen/settings/theme_bottom_sheet.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
-
 import 'language_bottom_sheet.dart';
 
 class Settings_Tap extends StatelessWidget {

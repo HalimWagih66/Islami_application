@@ -43,12 +43,14 @@ class _DetailsSuraState extends State<DetailsSura> {
         ),
         body: Card(
           margin: EdgeInsets.all(20),
+          elevation: 15,
+          shape: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(15),
+              borderSide: BorderSide(style: BorderStyle.solid,width: 1,color: Colors.transparent),),
           child: Container(
             padding: EdgeInsets.all(20),
             child: Column(
               children: [
-                Text_Aya(aya: "أَعُوذُ بِاللَّهِ مِنَ الشَّيطَانِ الرَّجِيمِ",),
-                Text_Aya(aya: "بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِِ",),
                 ayat.isEmpty?Center(child: CircularProgressIndicator()):Expanded(
                   child: ListView.separated(
                       itemBuilder: (context, index) => Text_Aya(aya: ayat[index]),

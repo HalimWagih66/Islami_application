@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../provider/settings_provider.dart';
 
 class LanguageBottomSheet extends StatelessWidget {
